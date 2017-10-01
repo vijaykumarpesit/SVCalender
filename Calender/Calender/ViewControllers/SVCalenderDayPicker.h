@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SVCalenderDayPicker : UIView
+@interface SVCalenderDayPicker : UIViewController
 
 @end

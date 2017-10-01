@@ -13,6 +13,7 @@
 		B19361141F7FE67D008F2313 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361131F7FE67D008F2313 /* main.m */; };
 		B19361371F80B953008F2313 /* SVCalenderContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361361F80B953008F2313 /* SVCalenderContainerViewController.m */; };
 		B193613B1F80BA14008F2313 /* SVCalenderDayPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B193613A1F80BA14008F2313 /* SVCalenderDayPicker.m */; };
+		B193614C1F80D20A008F2313 /* SVCalenderDayPickerViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B193614B1F80D20A008F2313 /* SVCalenderDayPickerViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		B19361361F80B953008F2313 /* SVCalenderContainerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderContainerViewController.m; sourceTree = "<group>"; };
 		B19361391F80BA14008F2313 /* SVCalenderDayPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderDayPicker.h; sourceTree = "<group>"; };
 		B193613A1F80BA14008F2313 /* SVCalenderDayPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderDayPicker.m; sourceTree = "<group>"; };
+		B193614A1F80D20A008F2313 /* SVCalenderDayPickerViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderDayPickerViewModel.h; sourceTree = "<group>"; };
+		B193614B1F80D20A008F2313 /* SVCalenderDayPickerViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderDayPickerViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 		B19361031F7FE67D008F2313 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
+				B19361491F80D1ED008F2313 /* ViewModels */,
 				B19361341F80B929008F2313 /* ViewControllers */,
 				B19361311F80A8E0008F2313 /* Views */,
 				B19361041F7FE67D008F2313 /* AppDelegate.h */,
@@ -74,8 +78,6 @@
 		B19361311F80A8E0008F2313 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B19361391F80BA14008F2313 /* SVCalenderDayPicker.h */,
-				B193613A1F80BA14008F2313 /* SVCalenderDayPicker.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,8 +87,19 @@
 			children = (
 				B19361351F80B953008F2313 /* SVCalenderContainerViewController.h */,
 				B19361361F80B953008F2313 /* SVCalenderContainerViewController.m */,
+				B19361391F80BA14008F2313 /* SVCalenderDayPicker.h */,
+				B193613A1F80BA14008F2313 /* SVCalenderDayPicker.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B19361491F80D1ED008F2313 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B193614A1F80D20A008F2313 /* SVCalenderDayPickerViewModel.h */,
+				B193614B1F80D20A008F2313 /* SVCalenderDayPickerViewModel.m */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19361141F7FE67D008F2313 /* main.m in Sources */,
+				B193614C1F80D20A008F2313 /* SVCalenderDayPickerViewModel.m in Sources */,
 				B19361061F7FE67D008F2313 /* AppDelegate.m in Sources */,
 				B19361371F80B953008F2313 /* SVCalenderContainerViewController.m in Sources */,
 				B193613B1F80BA14008F2313 /* SVCalenderDayPicker.m in Sources */,
