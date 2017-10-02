@@ -17,7 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSDate *lastDate = [NSDate dateWithTimeIntervalSinceNow:365*42*60*60];
+    
+    //Testing code, Actual container code will be written once I am done with agendaVC
     //Clean this shit once its tested
     SVCalenderDayPicker *dayPicker = [[SVCalenderDayPicker alloc] init];
     [self.view addSubview:dayPicker.view];

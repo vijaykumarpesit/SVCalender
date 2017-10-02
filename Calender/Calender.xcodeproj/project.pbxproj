@@ -21,7 +21,19 @@
 		B19361741F81F4BA008F2313 /* SVCalenderDayPickerCellConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361731F81F4BA008F2313 /* SVCalenderDayPickerCellConfigurator.m */; };
 		B19361771F823C96008F2313 /* SVCalenderMonthHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361761F823C96008F2313 /* SVCalenderMonthHeaderView.m */; };
 		B193617A1F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361791F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m */; };
+		B193618C1F82470F008F2313 /* CalenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B193618B1F82470F008F2313 /* CalenderTests.m */; };
+		B19361941F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B193618E1F82470F008F2313 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B19360F91F7FE67D008F2313 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B19361001F7FE67D008F2313;
+			remoteInfo = Calender;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B19361011F7FE67D008F2313 /* Calender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calender.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,10 +64,21 @@
 		B19361761F823C96008F2313 /* SVCalenderMonthHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderMonthHeaderView.m; sourceTree = "<group>"; };
 		B19361781F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderMonthHeaderViewModel.h; sourceTree = "<group>"; };
 		B19361791F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderMonthHeaderViewModel.m; sourceTree = "<group>"; };
+		B19361891F82470F008F2313 /* CalenderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B193618B1F82470F008F2313 /* CalenderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalenderTests.m; sourceTree = "<group>"; };
+		B193618D1F82470F008F2313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderDayPickerDataSourceTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B19360FE1F7FE67D008F2313 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B19361861F82470F008F2313 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -69,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				B19361031F7FE67D008F2313 /* Calender */,
+				B193618A1F82470F008F2313 /* CalenderTests */,
 				B19361021F7FE67D008F2313 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				B19361011F7FE67D008F2313 /* Calender.app */,
+				B19361891F82470F008F2313 /* CalenderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +204,16 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		B193618A1F82470F008F2313 /* CalenderTests */ = {
+			isa = PBXGroup;
+			children = (
+				B193618B1F82470F008F2313 /* CalenderTests.m */,
+				B193618D1F82470F008F2313 /* Info.plist */,
+				B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */,
+			);
+			path = CalenderTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,6 +234,24 @@
 			productReference = B19361011F7FE67D008F2313 /* Calender.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B19361881F82470F008F2313 /* CalenderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B19361921F82470F008F2313 /* Build configuration list for PBXNativeTarget "CalenderTests" */;
+			buildPhases = (
+				B19361851F82470F008F2313 /* Sources */,
+				B19361861F82470F008F2313 /* Frameworks */,
+				B19361871F82470F008F2313 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B193618F1F82470F008F2313 /* PBXTargetDependency */,
+			);
+			name = CalenderTests;
+			productName = CalenderTests;
+			productReference = B19361891F82470F008F2313 /* CalenderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,6 +264,11 @@
 					B19361001F7FE67D008F2313 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+					};
+					B19361881F82470F008F2313 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B19361001F7FE67D008F2313;
 					};
 				};
 			};
@@ -228,6 +286,7 @@
 			projectRoot = "";
 			targets = (
 				B19361001F7FE67D008F2313 /* Calender */,
+				B19361881F82470F008F2313 /* CalenderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,6 +298,13 @@
 			files = (
 				B19361111F7FE67D008F2313 /* LaunchScreen.storyboard in Resources */,
 				B193610E1F7FE67D008F2313 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B19361871F82470F008F2313 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +330,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B19361851F82470F008F2313 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B19361941F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m in Sources */,
+				B193618C1F82470F008F2313 /* CalenderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B193618F1F82470F008F2313 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B19361001F7FE67D008F2313 /* Calender */;
+			targetProxy = B193618E1F82470F008F2313 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B193610F1F7FE67D008F2313 /* LaunchScreen.storyboard */ = {
@@ -410,6 +493,36 @@
 			};
 			name = Release;
 		};
+		B19361901F82470F008F2313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S62Z5886G5;
+				INFOPLIST_FILE = CalenderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.svakriti.svCalender.CalenderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calender.app/Calender";
+			};
+			name = Debug;
+		};
+		B19361911F82470F008F2313 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S62Z5886G5;
+				INFOPLIST_FILE = CalenderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.svakriti.svCalender.CalenderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calender.app/Calender";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -427,6 +540,15 @@
 			buildConfigurations = (
 				B19361181F7FE67D008F2313 /* Debug */,
 				B19361191F7FE67D008F2313 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B19361921F82470F008F2313 /* Build configuration list for PBXNativeTarget "CalenderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B19361901F82470F008F2313 /* Debug */,
+				B19361911F82470F008F2313 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
