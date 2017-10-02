@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SVCalenderDayPickerCollectionViewCell : UICollectionViewCell
-
+@property (nonatomic) UILabel *titleLabel;
 @end
