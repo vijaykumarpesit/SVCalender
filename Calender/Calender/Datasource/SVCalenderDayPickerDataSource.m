@@ -20,14 +20,14 @@
 
 @implementation SVCalenderDayPickerDataSource
 
-- (instancetype)initWithFirstDate:(NSDate *)firstDate
+- (instancetype)initWithStartDate:(NSDate *)startDate
                          lastDate:(NSDate *)lastDate
                          calender:(NSCalendar *)calendar {
     self = [super init];
     if (self) {
-        _startDate = firstDate;
-        _lastDate = lastDate;
-        _calendar = calendar;
+        self.calendar = calendar;
+        self.startDate = startDate;
+        self.lastDate = lastDate;
     }
     return self;
 }
@@ -55,7 +55,7 @@
     NSRange range = [self.calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:firstDayOfMonth];
     NSUInteger numberOfDaysInMonth = range.length;
     
-    if (indexPath.row < weekday || indexPath.row >= numberOfDaysInMonth) {
+    if (indexPath.row < weekday || indexPath.row >= numberOfDaysInMonth + weekday) {
         return nil;
     } else {
         NSDateComponents *dateComponents = [NSDateComponents new];
@@ -110,5 +110,13 @@
     return _lastDateOfMonth;
 }
 
+- (void)setLastDate:(NSDate *)lastDate {
+    NSDateComponents *components = [self.calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:lastDate];
+    _lastDate =  [self.calendar dateFromComponents:components];
+}
 
+- (void)setStartDate:(NSDate *)startDate {
+    NSDateComponents *components = [self.calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:startDate];
+    _startDate =  [self.calendar dateFromComponents:components];
+}
 @end

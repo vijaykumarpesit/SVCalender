@@ -10,4 +10,20 @@
 
 @implementation SVCalenderDayPickerLayout
 
+-(id)init {
+    self = [super init];
+    if (self) {
+        self.minimumInteritemSpacing = 0.0f;
+        self.minimumLineSpacing = 0.0f;
+        self.scrollDirection = UICollectionViewScrollDirectionVertical;
+        self.sectionInset = UIEdgeInsetsMake(2.0f,
+                                             0,
+                                             2.0f,
+                                             0.0f);
+        self.headerReferenceSize = CGSizeMake(0, 30.0f);
+    }
+    
+    return self;
+}
+
 @end

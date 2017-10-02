@@ -11,7 +11,7 @@
 
 @interface SVCalenderDayPickerDataSource : NSObject <SVCalenderDayPickerDataSourceProtocol>
 
-- (instancetype)initWithFirstDate:(NSDate *)firstDate
+- (instancetype)initWithStartDate:(NSDate *)firstDate
                          lastDate:(NSDate *)lastDate
                          calender:(NSCalendar *)calender;
 

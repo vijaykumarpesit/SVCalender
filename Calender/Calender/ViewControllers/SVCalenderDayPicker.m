@@ -58,11 +58,17 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SVCalenderDayPickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SVCalendarDayPickerCellReuseIdentifier forIndexPath:indexPath];
-    SVCalenderDayPickerCellViewModel *model = [[SVCalenderDayPickerCellViewModel alloc] initWithDate:[NSDate date]];
+    SVCalenderDayPickerCellViewModel *model = [[SVCalenderDayPickerCellViewModel alloc] initWithDate:[self.dataSource dateAtIndexPath:indexPath]];
     [SVCalenderDayPickerCellConfigurator configureCell:cell withViewModel:model];
     return cell;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    //Take numberOf days in week as variable
+    CGFloat itemWidth = CGRectGetWidth(collectionView.bounds)/7;
+    return CGSizeMake(itemWidth, itemWidth);
+}
 #pragma mark -- Collection View Delegate
 
 
@@ -75,6 +81,8 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
     self.dayPickerCollectionView.dataSource = self;
     self.dayPickerCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.view addSubview:self.dayPickerCollectionView];
+    [self.dayPickerCollectionView setBackgroundColor:[UIColor whiteColor]];
+    [self.dayPickerCollectionView registerClass:[SVCalenderDayPickerCollectionViewCell class] forCellWithReuseIdentifier:SVCalendarDayPickerCellReuseIdentifier];
     
     //Constraints
     [self.dayPickerCollectionView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
@@ -109,7 +117,7 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
 
 - (void)initialiseDataSource {
     self.dataSource = [[SVCalenderDayPickerDataSource alloc]
-                       initWithFirstDate:self.firstDate
+                       initWithStartDate:self.firstDate
                        lastDate:self.lastDate
                        calender:self.calender];
 }

@@ -7,6 +7,7 @@
 //
 
 #import "SVCalenderContainerViewController.h"
+#import "SVCalenderDayPicker.h"
 
 @interface SVCalenderContainerViewController ()
 
@@ -16,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //Clean this shit once its tested
+    SVCalenderDayPicker *dayPicker = [[SVCalenderDayPicker alloc] init];
+    [self.view addSubview:dayPicker.view];
+    [self addChildViewController:dayPicker];
+    [dayPicker.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    [dayPicker.view setFrame:self.view.bounds];
 }
 
 @end
