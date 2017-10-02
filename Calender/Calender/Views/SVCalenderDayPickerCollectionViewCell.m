@@ -38,7 +38,11 @@ static const CGFloat SVCalenderDayPickerCellLabelSize = 30.0f;
 
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
-    [self.titleLabel setBackgroundColor:[UIColor redColor]];
+    if (selected) {
+        [self.titleLabel setBackgroundColor:[UIColor redColor]];
+    } else {
+        [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    }
 }
 
 - (void)prepareForReuse {
