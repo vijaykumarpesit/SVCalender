@@ -7,33 +7,44 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SVCalenderDayPickerDataSource.h"
 
 @interface SVCalenderDayPickerDataSourceTests : XCTestCase
-
 @end
+
+//Could have created dataSource as property,didn't prefer since we loose the flexibility of creating dataSource with different startDate endDate
 
 @implementation SVCalenderDayPickerDataSourceTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testNumberOfSections {
+    NSDate *startDate = [NSDate date];
+    NSDate *endDate = [[NSDate date] dateByAddingTimeInterval:365*24*60*60];
+    SVCalenderDayPickerDataSource *dataSource = [[SVCalenderDayPickerDataSource alloc]
+                                                 initWithStartDate:startDate
+                                                 lastDate:endDate
+                                                 calender:[NSCalendar currentCalendar]];
+    XCTAssertEqual([dataSource numberOfSections],13);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testNumberOfItemsInSection {
+    
+    NSDate *startDate = [NSDate date];
+    NSDate *endDate = [[NSDate date] dateByAddingTimeInterval:365*24*60*60];
+    SVCalenderDayPickerDataSource *dataSource = [[SVCalenderDayPickerDataSource alloc]
+                                                 initWithStartDate:startDate
+                                                 lastDate:endDate
+                                                 calender:[NSCalendar currentCalendar]];
+    
+    XCTAssertEqual([dataSource numberOfItemsInSection:3],35);
+    XCTAssertEqual([dataSource numberOfItemsInSection:1],35);
+    
 }
-
 @end
