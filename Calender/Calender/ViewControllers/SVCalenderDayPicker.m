@@ -44,6 +44,10 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
     [self configureCollectionView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self scrollCollectionViewToDate:[NSDate date]];
+}
 
 #pragma mark -- Collection View Data Source
 
@@ -89,6 +93,11 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
     [self.dayPickerCollectionView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor].active = YES;
     [self.dayPickerCollectionView.centerXAnchor constraintEqualToAnchor:self.view.centerXAnchor].active = YES;
     [self.dayPickerCollectionView.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor].active = YES;
+}
+
+- (void)scrollCollectionViewToDate:(NSDate *)date {
+    NSIndexPath *indexPath = [self.dataSource indexPathForDate:date];
+    [self.dayPickerCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
 }
 
 

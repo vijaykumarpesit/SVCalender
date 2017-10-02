@@ -72,7 +72,7 @@
     NSDate *firstDayOfMonth = [self firstDateOfMonthFromDate:self.startDateOfMonth withMonthOffset:section];
     NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstDayOfMonth] weekday];
     NSInteger day = [[self.calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date] day];
-    NSUInteger row = weekday+day;
+    NSUInteger row = (weekday-1)+(day-1);
     return [NSIndexPath indexPathForRow:row inSection:section];
 }
 
