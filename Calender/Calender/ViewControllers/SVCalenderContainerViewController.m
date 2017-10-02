@@ -17,8 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSDate *lastDate = [NSDate dateWithTimeIntervalSinceNow:365*42*60*60];
     //Clean this shit once its tested
-    SVCalenderDayPicker *dayPicker = [[SVCalenderDayPicker alloc] init];
+    SVCalenderDayPicker *dayPicker = [[SVCalenderDayPicker alloc] initWithFirstDate:[NSDate date] lastDate:lastDate calender:[NSCalendar currentCalendar]];
     [self.view addSubview:dayPicker.view];
     [self addChildViewController:dayPicker];
     [dayPicker.view setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];

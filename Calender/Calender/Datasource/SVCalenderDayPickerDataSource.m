@@ -55,11 +55,11 @@
     NSRange range = [self.calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:firstDayOfMonth];
     NSUInteger numberOfDaysInMonth = range.length;
     
-    if (indexPath.row < weekday || indexPath.row >= numberOfDaysInMonth + weekday) {
+    if (indexPath.row < weekday-1 || indexPath.row >= numberOfDaysInMonth + (weekday-1)) {
         return nil;
     } else {
         NSDateComponents *dateComponents = [NSDateComponents new];
-        dateComponents.day = indexPath.item - weekday;
+        dateComponents.day = indexPath.item - (weekday-1);
         NSDate *date = [self.calendar dateByAddingComponents:dateComponents toDate:firstDayOfMonth options:0];
         return date;
     }
