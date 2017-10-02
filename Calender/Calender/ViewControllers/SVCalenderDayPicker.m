@@ -12,9 +12,12 @@
 #import "SVCalenderDayPickerCollectionViewCell.h"
 #import "SVCalenderDayPickerCellConfigurator.h"
 #import "SVCalenderDayPickerCellViewModel.h"
+#import "SVCalenderMonthHeaderView.h"
+#import "SVCalenderMonthHeaderViewModel.h"
 
 static NSTimeInterval const SVCALENDERYEAR_TIME_INTERVAL = 1*365*24*60*60;
 static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.dayPicker.cell.identifier";
+static NSString *const SVCalendarDayPickerHeaderReuseIdentifier = @"sv.calendar.dayPicker.header.identifier";
 
 @interface SVCalenderDayPicker () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic) NSDate *firstDate;
@@ -46,6 +49,7 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //Scroll calender to current date
     [self scrollCollectionViewToDate:[NSDate date]];
 }
 
@@ -73,6 +77,22 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
     CGFloat itemWidth = CGRectGetWidth(collectionView.bounds)/7;
     return CGSizeMake(itemWidth, itemWidth);
 }
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind
+                                 atIndexPath:(NSIndexPath *)indexPath {
+    if (kind == UICollectionElementKindSectionHeader) {
+        SVCalenderMonthHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                                                                   withReuseIdentifier:SVCalendarDayPickerHeaderReuseIdentifier
+                                                                                          forIndexPath:indexPath];
+        SVCalenderMonthHeaderViewModel *model = [[SVCalenderMonthHeaderViewModel alloc] initWithDate:[self.dataSource dateAtIndexPath:[NSIndexPath indexPathForRow:15 inSection:indexPath.section]]];
+        headerView.titleLabel.text = model.titleLabelText;
+        return headerView;
+        
+    }
+    
+    return nil;
+}
+
 #pragma mark -- Collection View Delegate
 
 
@@ -87,7 +107,8 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
     [self.view addSubview:self.dayPickerCollectionView];
     [self.dayPickerCollectionView setBackgroundColor:[UIColor whiteColor]];
     [self.dayPickerCollectionView registerClass:[SVCalenderDayPickerCollectionViewCell class] forCellWithReuseIdentifier:SVCalendarDayPickerCellReuseIdentifier];
-    
+    [self.dayPickerCollectionView registerClass:[SVCalenderMonthHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SVCalendarDayPickerHeaderReuseIdentifier];
+
     //Constraints
     [self.dayPickerCollectionView.widthAnchor constraintEqualToAnchor:self.view.widthAnchor].active = YES;
     [self.dayPickerCollectionView.heightAnchor constraintEqualToAnchor:self.view.heightAnchor].active = YES;
