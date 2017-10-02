@@ -54,15 +54,16 @@
     NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstDayOfMonth] weekday];
     NSRange range = [self.calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:firstDayOfMonth];
     NSUInteger numberOfDaysInMonth = range.length;
+    NSDate *date = nil;
     
-    if (indexPath.row < weekday-1 || indexPath.row >= numberOfDaysInMonth + (weekday-1)) {
-        return nil;
-    } else {
+    //row > weekStartOffset && row < (numberOfDays + weekStartOffset)
+    if (indexPath.row >= weekday-1 && indexPath.row < numberOfDaysInMonth + (weekday-1)) {
         NSDateComponents *dateComponents = [NSDateComponents new];
         dateComponents.day = indexPath.item - (weekday-1);
-        NSDate *date = [self.calendar dateByAddingComponents:dateComponents toDate:firstDayOfMonth options:0];
-        return date;
+        date = [self.calendar dateByAddingComponents:dateComponents toDate:firstDayOfMonth options:0];
     }
+    
+    return date;
 }
 
 - (NSIndexPath *)indexPathForDate:(NSDate *)date {

@@ -26,6 +26,7 @@ static const CGFloat SVCalenderDayPickerCellLabelSize = 30.0f;
     [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
     self.titleLabel.layer.cornerRadius = SVCalenderDayPickerCellLabelSize/2;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.layer.masksToBounds = YES;
 
     //Constraints

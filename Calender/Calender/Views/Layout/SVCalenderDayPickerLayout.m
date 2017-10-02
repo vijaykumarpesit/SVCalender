@@ -20,7 +20,7 @@
                                              0,
                                              2.0f,
                                              0.0f);
-        self.headerReferenceSize = CGSizeMake(0, 30.0f);
+        self.headerReferenceSize = CGSizeMake(0, 10.0f);
     }
     
     return self;
