@@ -14,5 +14,9 @@
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section;
 
+- (NSDate *)dateAtIndexPath:(NSIndexPath *)indexPath;
+
+- (NSIndexPath *)indexPathForDate:(NSDate *)date;
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import "SVCalenderDayPickerDataSource.h"
 #import "NSDate+Utils.h"
+#import <UIKit/UIKit.h>
 
 @interface SVCalenderDayPickerDataSource ()
 @property (nonatomic) NSDate *startDate;
@@ -47,12 +48,44 @@
     return numberOfWeeksInMonth;
 }
 
+- (NSDate *)dateAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSDate *firstDayOfMonth = [self firstDateOfMonthFromDate:self.startDateOfMonth withMonthOffset:indexPath.section];
+    NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstDayOfMonth] weekday];
+    NSRange range = [self.calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:firstDayOfMonth];
+    NSUInteger numberOfDaysInMonth = range.length;
+    
+    if (indexPath.row < weekday || indexPath.row >= numberOfDaysInMonth) {
+        return nil;
+    } else {
+        NSDateComponents *dateComponents = [NSDateComponents new];
+        dateComponents.day = indexPath.item - weekday;
+        NSDate *date = [self.calendar dateByAddingComponents:dateComponents toDate:firstDayOfMonth options:0];
+        return date;
+    }
+}
+
+- (NSIndexPath *)indexPathForDate:(NSDate *)date {
+    
+    NSUInteger section = [self sectionForDate:date];
+    NSDate *firstDayOfMonth = [self firstDateOfMonthFromDate:self.startDateOfMonth withMonthOffset:section];
+    NSInteger weekday = [[self.calendar components: NSCalendarUnitWeekday fromDate: firstDayOfMonth] weekday];
+    NSInteger day = [[self.calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date] day];
+    NSUInteger row = weekday+day;
+    return [NSIndexPath indexPathForRow:row inSection:section];
+}
+
+- (NSInteger)sectionForDate:(NSDate *)date {
+    return [self.calendar components:NSCalendarUnitMonth fromDate:self.startDateOfMonth toDate:date options:0].month;
+}
+
 - (NSDate *)firstDateOfMonthFromDate:(NSDate *)date withMonthOffset:(NSInteger)offset {
     NSDateComponents *dateOffset = [NSDateComponents new];
     dateOffset.month = offset;
     NSDate *offsetDate = [self.calendar dateByAddingComponents:dateOffset toDate:date options:0];
     return offsetDate;
 }
+
 
 //Starting of current month, current month day 1
 - (NSDate *)startDateOfMonth {
@@ -76,5 +109,6 @@
     }
     return _lastDateOfMonth;
 }
+
 
 @end

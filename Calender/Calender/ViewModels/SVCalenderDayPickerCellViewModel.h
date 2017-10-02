@@ -10,4 +10,9 @@
 
 @interface SVCalenderDayPickerCellViewModel : NSObject
 
+- (instancetype)initWithDate:(NSDate *)date;
+
+@property (nonatomic) NSString *titleLabelText;
+@property (nonatomic) BOOL isToday;
+
 @end

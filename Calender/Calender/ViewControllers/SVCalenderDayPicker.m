@@ -10,6 +10,8 @@
 #import "SVCalenderDayPickerLayout.h"
 #import "SVCalenderDayPickerDataSource.h"
 #import "SVCalenderDayPickerCollectionViewCell.h"
+#import "SVCalenderDayPickerCellConfigurator.h"
+#import "SVCalenderDayPickerCellViewModel.h"
 
 static NSTimeInterval const SVCALENDERYEAR_TIME_INTERVAL = 1*365*24*60*60;
 static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.dayPicker.cell.identifier";
@@ -56,7 +58,8 @@ static NSString *const SVCalendarDayPickerCellReuseIdentifier = @"sv.calendar.da
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SVCalenderDayPickerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SVCalendarDayPickerCellReuseIdentifier forIndexPath:indexPath];
-    //Cell view model and configuring cell is pending
+    SVCalenderDayPickerCellViewModel *model = [[SVCalenderDayPickerCellViewModel alloc] initWithDate:[NSDate date]];
+    [SVCalenderDayPickerCellConfigurator configureCell:cell withViewModel:model];
     return cell;
 }
 
