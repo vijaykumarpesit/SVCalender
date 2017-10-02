@@ -23,6 +23,8 @@
 		B193617A1F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361791F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m */; };
 		B193618C1F82470F008F2313 /* CalenderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B193618B1F82470F008F2313 /* CalenderTests.m */; };
 		B19361941F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */; };
+		B19361A61F82ABEE008F2313 /* SVCalenderCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361A51F82ABEE008F2313 /* SVCalenderCoreDataStack.m */; };
+		B19361AC1F82AE4D008F2313 /* Calender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B19361AA1F82AE4D008F2313 /* Calender.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		B193618B1F82470F008F2313 /* CalenderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalenderTests.m; sourceTree = "<group>"; };
 		B193618D1F82470F008F2313 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderDayPickerDataSourceTests.m; sourceTree = "<group>"; };
+		B19361A41F82ABEE008F2313 /* SVCalenderCoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderCoreDataStack.h; sourceTree = "<group>"; };
+		B19361A51F82ABEE008F2313 /* SVCalenderCoreDataStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderCoreDataStack.m; sourceTree = "<group>"; };
+		B19361AB1F82AE4D008F2313 /* Calender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calender.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,7 @@
 		B19361031F7FE67D008F2313 /* Calender */ = {
 			isa = PBXGroup;
 			children = (
+				B19361A01F82ABB3008F2313 /* Model */,
 				B19361341F80B929008F2313 /* ViewControllers */,
 				B19361311F80A8E0008F2313 /* Views */,
 				B19361491F80D1ED008F2313 /* ViewModels */,
@@ -212,6 +218,16 @@
 				B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */,
 			);
 			path = CalenderTests;
+			sourceTree = "<group>";
+		};
+		B19361A01F82ABB3008F2313 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B19361A41F82ABEE008F2313 /* SVCalenderCoreDataStack.h */,
+				B19361A51F82ABEE008F2313 /* SVCalenderCoreDataStack.m */,
+				B19361AA1F82AE4D008F2313 /* Calender.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,10 +336,12 @@
 				B19361561F811CD7008F2313 /* SVCalenderDayPickerCellViewModel.m in Sources */,
 				B19361531F811CAF008F2313 /* SVCalenderDayPickerCollectionViewCell.m in Sources */,
 				B193616E1F81E2BB008F2313 /* NSDate+Utils.m in Sources */,
+				B19361AC1F82AE4D008F2313 /* Calender.xcdatamodeld in Sources */,
 				B19361061F7FE67D008F2313 /* AppDelegate.m in Sources */,
 				B193617A1F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m in Sources */,
 				B19361741F81F4BA008F2313 /* SVCalenderDayPickerCellConfigurator.m in Sources */,
 				B19361371F80B953008F2313 /* SVCalenderContainerViewController.m in Sources */,
+				B19361A61F82ABEE008F2313 /* SVCalenderCoreDataStack.m in Sources */,
 				B193613B1F80BA14008F2313 /* SVCalenderDayPicker.m in Sources */,
 				B193615A1F811D0B008F2313 /* SVCalenderDayPickerLayout.m in Sources */,
 				B19361681F8121BE008F2313 /* SVCalenderDayPickerDataSource.m in Sources */,
@@ -554,6 +572,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B19361AA1F82AE4D008F2313 /* Calender.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B19361AB1F82AE4D008F2313 /* Calender.xcdatamodel */,
+			);
+			currentVersion = B19361AB1F82AE4D008F2313 /* Calender.xcdatamodel */;
+			path = Calender.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B19360F91F7FE67D008F2313 /* Project object */;
 }
