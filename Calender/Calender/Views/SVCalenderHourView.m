@@ -29,11 +29,12 @@
     UIView *seperator = [[UIView alloc] initWithFrame:CGRectZero];
     [self addSubview:seperator];
     seperator.translatesAutoresizingMaskIntoConstraints = NO;
-    [seperator.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:50].active = YES;
+    [seperator.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:60].active = YES;
     [seperator.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:0].active = YES;
     [seperator.centerYAnchor constraintEqualToAnchor:self.hourLabel.centerYAnchor].active = YES;
-    [seperator.heightAnchor constraintEqualToConstant:0.5].active = YES;
-    [seperator setBackgroundColor:[UIColor grayColor]];
+    [seperator.heightAnchor constraintEqualToConstant:0.50].active = YES;
+    [seperator setBackgroundColor:[UIColor blackColor]];
+    [seperator setAlpha:0.3f];
     
 }
 

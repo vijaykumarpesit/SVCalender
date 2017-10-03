@@ -36,8 +36,8 @@ static const CGFloat SVCalenderHourViewHeight = 40.0f;
     self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.scrollView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
     [self.scrollView.topAnchor constraintEqualToAnchor:self.topAnchor].active = YES;
-    [self.scrollView.widthAnchor constraintEqualToAnchor:self.widthAnchor].active = YES;
-    [self.scrollView.heightAnchor constraintEqualToAnchor:self.heightAnchor].active = YES;
+    [self.scrollView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    [self.scrollView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
 }
 
 - (void)setHours:(NSArray<NSString *> *)hours {
@@ -51,13 +51,22 @@ static const CGFloat SVCalenderHourViewHeight = 40.0f;
 //Could have written view model for this, But thought it may be over kill for this simple configuration
 - (void)configureHoursViewWithHours:(NSArray *)hours {
     for(int i=0; i<hours.count; i++) {
-        CGRect hourViewFrame = CGRectMake(0, i *SVCalenderHourViewHeight,CGRectGetWidth(self.bounds),SVCalenderHourViewHeight);
         NSString *hour = hours[i];
-        SVCalenderHourView *hourView = [[SVCalenderHourView alloc] initWithFrame:hourViewFrame];
+        SVCalenderHourView *hourView = [[SVCalenderHourView alloc] initWithFrame:CGRectZero];
         hourView.hourLabel.text = hour;
         [self.scrollView addSubview:hourView];
+        [self configureConstraintsToHourView:hourView withIndex:i];
     }
+    
     self.scrollView.contentSize = CGSizeMake(CGRectGetWidth(self.scrollView.bounds), hours.count * SVCalenderHourViewHeight + 20);
+}
+
+- (void)configureConstraintsToHourView:(UIView *)hourView withIndex:(NSUInteger)index {
+    hourView.translatesAutoresizingMaskIntoConstraints = NO;
+    [hourView.leftAnchor constraintEqualToAnchor:self.scrollView.leftAnchor].active = YES;
+    [hourView.topAnchor constraintEqualToAnchor:self.scrollView.topAnchor constant:index *SVCalenderHourViewHeight].active = YES;
+    [hourView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    [hourView.heightAnchor constraintEqualToConstant:SVCalenderHourViewHeight].active = YES;
 }
 
 @end

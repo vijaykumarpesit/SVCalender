@@ -18,11 +18,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SVCalenderAgendaView *agendaView = [[SVCalenderAgendaView alloc] initWithFrame:self.view.bounds];
-    agendaView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    [self configureAgendaView];
+}
+
+- (void)configureAgendaView {
+    SVCalenderAgendaView *agendaView = [[SVCalenderAgendaView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:agendaView];
+    agendaView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [agendaView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
+    [agendaView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
+    [agendaView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor].active = YES;
+    [agendaView.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    
     SVCalenderAgendaViewModel *model = [SVCalenderAgendaViewModel new];
     [agendaView setHours:[model hours]];
-    
 }
+
 @end
