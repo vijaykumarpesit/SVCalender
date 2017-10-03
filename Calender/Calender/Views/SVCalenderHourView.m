@@ -24,7 +24,8 @@
     [self.hourLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:5.0f].active = YES;
     [self.hourLabel.topAnchor constraintEqualToAnchor:self.topAnchor constant:0.0f].active = YES;
     [self.hourLabel setBackgroundColor:[UIColor clearColor]];
-    
+    [self.hourLabel setFont:[UIFont systemFontOfSize:11]];
+
     UIView *seperator = [[UIView alloc] initWithFrame:CGRectZero];
     [self addSubview:seperator];
     seperator.translatesAutoresizingMaskIntoConstraints = NO;
