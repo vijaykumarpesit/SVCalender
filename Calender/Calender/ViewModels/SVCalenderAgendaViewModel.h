@@ -10,4 +10,7 @@
 
 @interface SVCalenderAgendaViewModel : NSObject
 
+//Default is 12 hours format
+@property(nonatomic) BOOL isIn24HoursFormat;
+- (NSArray < NSString *> *)hours;
 @end
