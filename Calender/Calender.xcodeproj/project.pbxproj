@@ -25,6 +25,11 @@
 		B19361941F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361931F82473A008F2313 /* SVCalenderDayPickerDataSourceTests.m */; };
 		B19361A61F82ABEE008F2313 /* SVCalenderCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361A51F82ABEE008F2313 /* SVCalenderCoreDataStack.m */; };
 		B19361AC1F82AE4D008F2313 /* Calender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B19361AA1F82AE4D008F2313 /* Calender.xcdatamodeld */; };
+		B19361AF1F8317CA008F2313 /* SVCalenderAgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361AE1F8317CA008F2313 /* SVCalenderAgendaViewController.m */; };
+		B19361B51F831923008F2313 /* SVCalenderAgendaView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361B41F831923008F2313 /* SVCalenderAgendaView.m */; };
+		B19361B81F831948008F2313 /* SVCalenderEventView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361B71F831948008F2313 /* SVCalenderEventView.m */; };
+		B19361BB1F831962008F2313 /* SVCalenderHourView.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361BA1F831962008F2313 /* SVCalenderHourView.m */; };
+		B19361BE1F831987008F2313 /* SVCalenderAgendaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B19361BD1F831987008F2313 /* SVCalenderAgendaViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,16 @@
 		B19361A41F82ABEE008F2313 /* SVCalenderCoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderCoreDataStack.h; sourceTree = "<group>"; };
 		B19361A51F82ABEE008F2313 /* SVCalenderCoreDataStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderCoreDataStack.m; sourceTree = "<group>"; };
 		B19361AB1F82AE4D008F2313 /* Calender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Calender.xcdatamodel; sourceTree = "<group>"; };
+		B19361AD1F8317CA008F2313 /* SVCalenderAgendaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderAgendaViewController.h; sourceTree = "<group>"; };
+		B19361AE1F8317CA008F2313 /* SVCalenderAgendaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderAgendaViewController.m; sourceTree = "<group>"; };
+		B19361B31F831923008F2313 /* SVCalenderAgendaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderAgendaView.h; sourceTree = "<group>"; };
+		B19361B41F831923008F2313 /* SVCalenderAgendaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderAgendaView.m; sourceTree = "<group>"; };
+		B19361B61F831948008F2313 /* SVCalenderEventView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderEventView.h; sourceTree = "<group>"; };
+		B19361B71F831948008F2313 /* SVCalenderEventView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderEventView.m; sourceTree = "<group>"; };
+		B19361B91F831962008F2313 /* SVCalenderHourView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderHourView.h; sourceTree = "<group>"; };
+		B19361BA1F831962008F2313 /* SVCalenderHourView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderHourView.m; sourceTree = "<group>"; };
+		B19361BC1F831987008F2313 /* SVCalenderAgendaViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVCalenderAgendaViewModel.h; sourceTree = "<group>"; };
+		B19361BD1F831987008F2313 /* SVCalenderAgendaViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVCalenderAgendaViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +155,12 @@
 				B19361521F811CAF008F2313 /* SVCalenderDayPickerCollectionViewCell.m */,
 				B19361751F823C96008F2313 /* SVCalenderMonthHeaderView.h */,
 				B19361761F823C96008F2313 /* SVCalenderMonthHeaderView.m */,
+				B19361B31F831923008F2313 /* SVCalenderAgendaView.h */,
+				B19361B41F831923008F2313 /* SVCalenderAgendaView.m */,
+				B19361B61F831948008F2313 /* SVCalenderEventView.h */,
+				B19361B71F831948008F2313 /* SVCalenderEventView.m */,
+				B19361B91F831962008F2313 /* SVCalenderHourView.h */,
+				B19361BA1F831962008F2313 /* SVCalenderHourView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -151,6 +172,8 @@
 				B19361361F80B953008F2313 /* SVCalenderContainerViewController.m */,
 				B19361391F80BA14008F2313 /* SVCalenderDayPicker.h */,
 				B193613A1F80BA14008F2313 /* SVCalenderDayPicker.m */,
+				B19361AD1F8317CA008F2313 /* SVCalenderAgendaViewController.h */,
+				B19361AE1F8317CA008F2313 /* SVCalenderAgendaViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -162,6 +185,8 @@
 				B19361551F811CD7008F2313 /* SVCalenderDayPickerCellViewModel.m */,
 				B19361781F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.h */,
 				B19361791F823DD3008F2313 /* SVCalenderMonthHeaderViewModel.m */,
+				B19361BC1F831987008F2313 /* SVCalenderAgendaViewModel.h */,
+				B19361BD1F831987008F2313 /* SVCalenderAgendaViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -331,9 +356,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19361B81F831948008F2313 /* SVCalenderEventView.m in Sources */,
 				B19361771F823C96008F2313 /* SVCalenderMonthHeaderView.m in Sources */,
 				B19361141F7FE67D008F2313 /* main.m in Sources */,
+				B19361BB1F831962008F2313 /* SVCalenderHourView.m in Sources */,
 				B19361561F811CD7008F2313 /* SVCalenderDayPickerCellViewModel.m in Sources */,
+				B19361B51F831923008F2313 /* SVCalenderAgendaView.m in Sources */,
 				B19361531F811CAF008F2313 /* SVCalenderDayPickerCollectionViewCell.m in Sources */,
 				B193616E1F81E2BB008F2313 /* NSDate+Utils.m in Sources */,
 				B19361AC1F82AE4D008F2313 /* Calender.xcdatamodeld in Sources */,
@@ -343,8 +371,10 @@
 				B19361371F80B953008F2313 /* SVCalenderContainerViewController.m in Sources */,
 				B19361A61F82ABEE008F2313 /* SVCalenderCoreDataStack.m in Sources */,
 				B193613B1F80BA14008F2313 /* SVCalenderDayPicker.m in Sources */,
+				B19361AF1F8317CA008F2313 /* SVCalenderAgendaViewController.m in Sources */,
 				B193615A1F811D0B008F2313 /* SVCalenderDayPickerLayout.m in Sources */,
 				B19361681F8121BE008F2313 /* SVCalenderDayPickerDataSource.m in Sources */,
+				B19361BE1F831987008F2313 /* SVCalenderAgendaViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
