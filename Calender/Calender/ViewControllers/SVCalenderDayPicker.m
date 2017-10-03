@@ -117,6 +117,7 @@ static NSString *const SVCalendarDayPickerHeaderReuseIdentifier = @"sv.calendar.
 }
 
 - (void)scrollCollectionViewToDate:(NSDate *)date {
+    [self.view layoutIfNeeded];
     NSIndexPath *indexPath = [self.dataSource indexPathForDate:date];
     [self.dayPickerCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
 }
