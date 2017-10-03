@@ -23,13 +23,14 @@
     self.hourLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self.hourLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:5.0f].active = YES;
     [self.hourLabel.topAnchor constraintEqualToAnchor:self.topAnchor constant:0.0f].active = YES;
-    [self.hourLabel setBackgroundColor:[UIColor grayColor]];
+    [self.hourLabel setBackgroundColor:[UIColor clearColor]];
     
-    UILabel *seperator = [[UILabel alloc] initWithFrame:CGRectZero];
+    UIView *seperator = [[UIView alloc] initWithFrame:CGRectZero];
     [self addSubview:seperator];
     seperator.translatesAutoresizingMaskIntoConstraints = NO;
     [seperator.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:50].active = YES;
-    [seperator.centerXAnchor constraintEqualToAnchor:self.hourLabel.centerXAnchor].active = YES;
+    [seperator.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:0].active = YES;
+    [seperator.centerYAnchor constraintEqualToAnchor:self.hourLabel.centerYAnchor].active = YES;
     [seperator.heightAnchor constraintEqualToConstant:0.5].active = YES;
     [seperator setBackgroundColor:[UIColor grayColor]];
     

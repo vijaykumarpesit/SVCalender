@@ -7,6 +7,8 @@
 //
 
 #import "SVCalenderAgendaViewController.h"
+#import "SVCalenderAgendaView.h"
+#import "SVCalenderAgendaViewModel.h"
 
 @interface SVCalenderAgendaViewController ()
 
@@ -16,6 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    SVCalenderAgendaView *agendaView = [[SVCalenderAgendaView alloc] initWithFrame:self.view.bounds];
+    agendaView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:agendaView];
+    SVCalenderAgendaViewModel *model = [SVCalenderAgendaViewModel new];
+    [agendaView setHours:[model hours]];
+    
 }
-
 @end
