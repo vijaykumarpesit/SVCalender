@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SVCalenderAgendaView : UIView
-
+@property (nonatomic) NSArray <NSString *> *hours;
 @end

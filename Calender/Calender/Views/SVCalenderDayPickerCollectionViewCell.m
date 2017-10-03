@@ -45,9 +45,4 @@ static const CGFloat SVCalenderDayPickerCellLabelSize = 30.0f;
     }
 }
 
-- (void)prepareForReuse {
-    //[super prepareForReuse];
-    //[self.titleLabel setBackgroundColor:[UIColor clearColor]];
-}
-
 @end

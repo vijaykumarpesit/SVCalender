@@ -10,4 +10,6 @@
 
 @interface SVCalenderHourView : UIView
 
+@property (nonatomic) UILabel *hourLabel;
+
 @end
