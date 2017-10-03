@@ -34,7 +34,7 @@ static const CGFloat SVCalenderDayPickerHeight = 200.0f;
     dayPicker.view.translatesAutoresizingMaskIntoConstraints = NO;
     [dayPicker.view.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor].active = YES;
     [dayPicker.view.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor].active = YES;
-    [dayPicker.view.topAnchor constraintEqualToAnchor:self.view.topAnchor].active = YES;
+    [dayPicker.view.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:20].active = YES;
 
     [dayPicker.view.heightAnchor constraintEqualToConstant:SVCalenderDayPickerHeight].active = YES;
     
